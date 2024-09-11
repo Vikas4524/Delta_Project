@@ -32,7 +32,21 @@ const flash = require("connect-flash");
 // const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
  const dbUrl = process.env.ATLASDB_URL; 
 
+                            
+                            //  mongoDB Cannections 
 
+  main()
+   .then((res)=>{
+      console.log("connection working");
+    })
+     .catch((err)=>{
+      console.log(err);
+    });
+     async function main() {
+     await mongoose.connect(dbUrl);    
+    };
+                            
+                                                        
                         //   Express Router
 const Listings = require("./routes/listing.js")
 const Reviews = require("./routes/review.js")
@@ -137,20 +151,6 @@ app.listen(port, ()=>{
 
 
 
-
-                            //  mongoDB Cannections 
-
-main()
-.then((res)=>{
-    console.log("connection working");
-})
-.catch((err)=>{
-    console.log(err);
-});
-
-async function main() {
-    await mongoose.connect(dbUrl);    
-};
 
 
 
