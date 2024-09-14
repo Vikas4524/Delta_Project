@@ -32,6 +32,9 @@ const flash = require("connect-flash");
 // const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
  const dbUrl = process.env.ATLASDB_URL; 
 
+async function main() {
+    await mongoose.connect(dbUrl);    
+};
 
                         //   Express Router
 const Listings = require("./routes/listing.js")
@@ -148,9 +151,6 @@ main()
     console.log(err);
 });
 
-async function main() {
-    await mongoose.connect(dbUrl);    
-};
 
 
 
