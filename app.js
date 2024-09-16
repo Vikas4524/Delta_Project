@@ -14,7 +14,7 @@ const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
 // const AsyncWrap = require("./utils/wrapAsync.js");
 // const {Schema , reviewSchema} = require("./Views/schema.js");
-// const expressError = require("./utils/ExpressError.js");
+const expressError = require("./utils/ExpressError.js");
 const { error } = require("console");
 const { wrap } = require("module");
 const { array } = require("joi");
@@ -32,8 +32,14 @@ const flash = require("connect-flash");
 // const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
  const dbUrl = process.env.ATLASDB_URL; 
 
+<<<<<<< HEAD
                             
                             //  mongoDB Cannections 
+=======
+async function main() {
+    await mongoose.connect(dbUrl);    
+};
+>>>>>>> aa559016ed1a727ec72077aa65afb2a240464e7e
 
   main()
    .then((res)=>{
@@ -152,6 +158,20 @@ app.listen(port, ()=>{
 
 
 
+<<<<<<< HEAD
+=======
+                            //  mongoDB Cannections 
+
+main()
+.then((res)=>{
+    console.log("connection working");
+})
+.catch((err)=>{
+    console.log(err);
+});
+
+
+>>>>>>> aa559016ed1a727ec72077aa65afb2a240464e7e
 
 
 
