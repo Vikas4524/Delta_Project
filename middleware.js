@@ -2,7 +2,7 @@ const Listing = require("./Models/listing.js");
 const Review = require("./Models/review.js");
 
 
-const {Schema , reviewSchema} = require("./views/schema.js");
+const {Schema , reviewSchema} = require("./Views/schema.js");
 const expressError = require("./utils/ExpressError.js");
 
 
