@@ -137,15 +137,15 @@ app.use((req,res,next)=>{
      
  
 
- //    app.all("*",(req,res,next)=>{
- //        next(new expressError(404, "page is Not  Found!"));
- //    })
+    app.all("*",(req,res,next)=>{
+        next(new expressError(404, "page is Not  Found!"));
+    })
 
- //            //   middleWare 
- // app.use((err,req,res,next)=>{
- //   let {statusCode = 500 , message = "Something went wrong!"} = err;
- //   res.render("Error.ejs", {err});
- // })
+            //   middleWare 
+ app.use((err,req,res,next)=>{
+   let {statusCode = 500 , message = "Something went wrong!"} = err;
+   res.render("Error.ejs", {err});
+ })
 
 
 
